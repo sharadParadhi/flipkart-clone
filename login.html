@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    body{
+        background-color: lightblue;
+    }
+    .pop-up {
+       
+      
+    outline: none;
+    position: absolute;
+    width: 800px;
+    top: -150%;
+    height: 530px;
+   
+    
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 150px;
+    overflow: auto;
+    /* transition: top 0ms ease-in-out 0ms,
+     opacity 200ms ease-in-out 0ms,
+     transform 200ms ease-in-out 0ms; */
+ 
+}
+
+
+
+.button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 32px;
+    line-height: 1;
+    vertical-align: top;
+}
+.login{
+
+    display: flex;
+    outline: none;
+    position: relative;
+    width: 760px;
+   
+    height: 500px;
+   
+    background: white;
+    border-radius: 4px;
+
+}
+.pop-up.active{
+    top: 30%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    /* transition:top 0ms ease-in-out 0ms,
+     opacity 200ms ease-in-out 0ms,
+     transform 200ms ease-in-out 0ms;  */
+}
+#left{
+ width: 300px;
+ background-color: #2874F0;
+ height: 500px;
+ display: flex;
+ align-content: center;
+}
+
+.info{
+font-family: Roboto, Arial, sans-serif;
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+color: rgb(219, 219, 219);
+position: relative;
+bottom: 35px;
+
+}
+#left div{
+    
+    position: relative;
+    bottom: 40px;
+    width: 220px;
+    margin: auto;
+}
+#left div img{
+    position: relative;
+    top: 120px;
+}
+.logintext{
+position: relative;
+bottom: 28px;
+font-family: Roboto, Arial, sans-serif;
+font-size: 28px;
+font-weight: 600;
+line-height: 39.2px;
+color: rgb(255, 255, 255);
+
+}
+#right{
+    /* border: 2px solid black; */
+    width: 460px;
+    height: 500px;
+  
+}
+form{
+    margin: auto;
+    margin-top: 50px;
+   width: 360px;
+    /* border: 1px solid red; */
+}
+.input{
+    width: 350px;
+    margin-bottom: 10px;
+    height: 30px;
+    
+    outline: none;
+    border: 1px solid #72A4F5;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.btnlogin{
+    margin-top: 10px;
+    width: 359px;
+    margin-bottom: 10px;
+    height: 45px;
+    border: none;
+    background-color: #FB641B;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    color: #fff;
+    font-family: Roboto,Arial,sans-serif;
+    letter-spacing: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.T_C{
+    margin-top: 10px;
+  color: #2874F0;
+  
+}
+form{
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(135, 135, 135);
+}
+#newaccount{
+    margin: auto;
+    font-family: Roboto, Arial, sans-serif;
+    margin-left: 95px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #2874f0;
+    cursor: pointer;
+    position: relative;
+    top: 200px;
+    text-decoration: none;
+    letter-spacing: 0;
+}
+/* sign up pop-up *********************************/
+.pop-up-sign-up{
+       
+      
+       outline: none;
+       position: absolute;
+       width: 800px;
+       top: -150%;
+       height: 530px;
+      
+       
+       border-radius: 4px;
+       margin: 0 auto;
+       margin-top: 150px;
+       overflow: auto;
+       /* transition: top 0ms ease-in-out 0ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 200ms ease-in-out 0ms; */
+    
+   }
+   .pop-up-sign-up.active{
+    top: 30%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    /* transition:top 0ms ease-in-out 0ms,
+     opacity 200ms ease-in-out 0ms,
+     transform 200ms ease-in-out 0ms;  */
+}
+.signuptext{
+  
+    width: 250px;
+    position: relative;
+bottom: 28px;
+font-family: Roboto, Arial, sans-serif;
+font-size: 28px;
+font-weight: 600;
+
+color: rgb(255, 255, 255);
+}
+
+.existingbtn{
+    margin-top: 10px;
+    width: 359px;
+    margin-left: 49px;
+    height: 45px;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    color: #2874f0;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.btnloginOtp{
+    margin-top: 10px;
+    width: 359px;
+    
+    height: 45px;
+    background-color: #2874f0;
+    color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    border: none;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.resendotp{
+    text-align: center;
+    margin-top: 32px;
+    color: #878787;
+    font-size: 14px;
+    font-family: Roboto, Arial, sans-serif;
+}
+#Resend{
+    color: #2874f0;
+    font-weight: 700;
+    cursor: pointer;
+}
+.otpshow{
+    font-weight: 400;
+    margin-left: 10px;
+    color: black;
+    font-size: 14px;
+    font-family: Roboto, Arial, sans-serif;
+}
+.otp-pop-up{
+   
+    outline: none;
+    position: absolute;
+    width: 400px;
+    background-color: #ffffffee;
+    right: 10px;
+    left: -150%;
+    top: 520px;
+    height: 120px;
+    border-radius: 4px;
+    margin-top: 230px;
+    overflow: auto;
+}
+.otp-pop-up div{
+   
+   
+    font-size: 20px;
+   
+    width: 370px;
+    height: 100px;
+}
+.otpname{
+    padding-top: 10px;
+}
+.otp-pop-up .buttonotpshow{
+    background-color: red;
+    border-radius: 50%;
+   margin-right: 15px;
+   margin-top: 5px;
+   font-size: 20px;
+ 
+
+}
+.pop-up-otp{
+    outline: none;
+    position: absolute;
+    width: 800px;
+    top: -150%;
+    height: 530px;
+   
+    
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 150px;
+    overflow: auto;
+}
+.pop-up-otp.active{
+    top: 30%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
+.otp-pop-up.active{
+    top: 66%;
+    left: 87%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+  </style>
+<body>
+    <button class="sign">Click Here</button>
+    <div class="pop-up">
+        <button class="button button1">✕</button>
+       <div class="login">
+        <div id="left">
+            <div>
+                <p class="logintext">Login</p>
+            <p class="info">
+            <span>Get access to your <br> Orders, Wishlist and <br> Recommendations</span>
+            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="">
+        </div>
+        </p>
+        </div>
+        <div id="right">
+            <form >
+                
+                <input type="number/email" name="email" class="input" id="emailinput" placeholder="Enter Email/Mobile number" required> <br>
+                <input type="new-password" id="passinput" class="input" placeholder="Enter Your Password" required> <br>
+                <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
+                <input type="submit" class="btnlogin" value="Request OTP" >
+            </form>
+            <a href="#" id="newaccount">New to Flipkart? Create an account</a>
+        </div>
+       </div>
+    </div>
+
+     <!-- ********************************** login otp page **********************************-->
+
+    <div class="pop-up-otp">
+        <button class="button buttonotp">✕</button>
+       <div class="login">
+        <div id="left">
+            <div>
+                <p class="logintext">Login</p>
+            <p class="info">
+            <span>Get access to your <br> Orders, Wishlist and <br> Recommendations</span>
+            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="">
+        </div>
+        </p>
+        </div>
+        <div id="right">
+           
+            <form >
+                <input type="otp" id="otpnumber" class="input" placeholder="Enter Your OTP" required> <br>
+                <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
+                <input type="submit" class="btnloginOtp" value="Verify" >
+            </form>
+            <p class="resendotp">Not received your code? <span id="Resend">Resend code</span></p>
+            <a href="#" id="newaccount">New to Flipkart? Create an account</a>
+        </div>
+       </div>
+    </div>
+
+
+
+
+   <!-- ********************************** Signup page **********************************-->
+
+    <div class="pop-up-sign-up">
+        <button class="button button2">✕</button>
+       <div class="login">
+        <div id="left">
+            <div>
+                <p class="signuptext">Looks like you're new here!</p>
+            <p class="info">
+            <span>Sign up with your mobile number to get started</span>
+            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="">
+        </div>
+        </p>
+        </div>
+        <div id="right">
+            <form >
+                <input type="name" name="name" class="input" id="namesignup" placeholder="Enter Your Full Name" required> <br>
+                <input type="number/email" name="email" class="input" id="emailinputsignup" placeholder="Enter Email/Mobile number" required> <br>
+                <input type="new-password" id="passinputsigup1" class="input" placeholder="Enter Your Password" required> <br>
+                <input type="new-password" id="passinputsignup2" class="input" placeholder="Confirm Your Password" required> <br>
+                <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
+                <input type="submit" class="btnlogin" id="btnsignup" value="CONTINUE" >
+                
+            </form>
+            <button type="submit" class="existingbtn" >Existing User? Log in</button> 
+        </div>
+       </div>
+    </div>
+
+<!-- ********************************** otp display page **********************************-->
+<div class="otp-pop-up">
+    <button class="button buttonotpshow">✕</button>
+     <div >
+        <p class="otpshow otpname">Hai <span></span> </p>
+        <p class="otpshow"><span> </span>   is the verification code to log in to your Flipkart <br> account. Please DO NOT SHARE this code with anyone <br> including delivery agents.</p>
+     </div>
+</div>
+
+
+
+</body>
+<script>
+  window.addEventListener("load", ()=>{
+    setTimeout(() => {
+        document.querySelector(".pop-up").classList.add("active");
+    }, 1000);
+  })
+  // ********************************** login page **********************************-->
+
+    document.querySelector(".sign").addEventListener("click", ()=>{
+        document.querySelector(".pop-up").classList.add("active");
+    })
+    
+    document.querySelector(".pop-up .button1").addEventListener("click", ()=>{
+        document.querySelector(".pop-up").classList.remove("active");
+    })
+
+
+    document.querySelector(".existingbtn").addEventListener("click", ()=>{
+        document.querySelector(".pop-up").classList.add("active");
+        document.querySelector(".pop-up-sign-up").classList.remove("active");
+        
+    })
+
+
+// ********************************** otp page **********************************-->
+    let loginbtn = document.querySelector("form");
+
+    loginbtn.addEventListener("submit",(e) =>{
+        e.preventDefault();
+        document.querySelector(".pop-up").classList.remove("active");
+        document.querySelector(".pop-up-otp").classList.add("active");
+
+
+        setTimeout(() => {
+            document.querySelector(".otp-pop-up").classList.add("active");
+        }, 2000);
+    })
+
+    // ********************************** signup page **********************************-->
+
+    document.getElementById("newaccount").addEventListener("click",()=>{
+        document.querySelector(".pop-up").classList.remove("active");
+        document.querySelector(".pop-up-sign-up").classList.add("active");
+    })
+   
+
+    document.querySelector(".pop-up-sign-up .button2").addEventListener("click", ()=>{
+        document.querySelector(".pop-up-sign-up").classList.remove("active");
+    })
+
+
+    // ********************************** otp  show page **********************************-->
+    document.querySelector(".pop-up-otp .buttonotp").addEventListener("click", ()=>{
+        document.querySelector(".pop-up-otp").classList.remove("active");
+    })
+
+    document.querySelector(".otp-pop-up .buttonotpshow").addEventListener("click", ()=>{
+        document.querySelector(".otp-pop-up").classList.remove("active");
+    })
+   
+</script>
+</html>
