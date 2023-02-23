@@ -10,6 +10,9 @@
     body{
         background-color: lightblue;
     }
+    body.active{
+        background-color: rgba(0,0,0,0.5);
+    }
     .pop-up {
        
       
@@ -61,6 +64,7 @@
 .pop-up.active{
     top: 30%;
     left: 50%;
+   
     opacity: 1;
     transform: translate(-50%,-50%) scale(1);
     /* transition:top 0ms ease-in-out 0ms,
@@ -264,29 +268,28 @@ color: rgb(255, 255, 255);
     outline: none;
     position: absolute;
     width: 400px;
-    background-color: #ffffffee;
+    background-color: #F2F2F2;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     right: 10px;
     left: -150%;
     top: 520px;
-    height: 120px;
+    height: 125px;
     border-radius: 4px;
     margin-top: 230px;
     overflow: auto;
 }
 .otp-pop-up div{
-   
-   
+   position: relative;
+   bottom: 20px;
     font-size: 20px;
    
     width: 370px;
     height: 100px;
 }
-.otpname{
-    padding-top: 10px;
-}
+
 .otp-pop-up .buttonotpshow{
-    background-color: red;
-    border-radius: 50%;
+   color: red;
+    
    margin-right: 15px;
    margin-top: 5px;
    font-size: 20px;
@@ -317,7 +320,64 @@ color: rgb(255, 255, 255);
     left: 87%;
     opacity: 1;
     transform: translate(-50%,-50%) scale(1);
+    transition:bottom 200ms ease-in-out 200ms,
+     opacity 200ms ease-in-out 0ms,
+     transform 200ms ease-in-out 0ms;
 }
+.notification{
+    position: relative;
+    
+    left: 5px;
+}
+
+
+.loader {
+    margin-right: 10px;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid  #2874f0db;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 0.3s linear infinite; /* Safari */
+  animation: spin 1.4s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.btnloginOtp.active{
+ display: none;
+}
+
+#Veryfiing{
+    width: 359px;
+    height: 45px;
+    display: flex;
+      display: none;
+      justify-content: center;
+      align-items: center;
+   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    border: none;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2874f0db;
+}
+
+#Veryfiing.active{
+    display: flex;
+}
+
+
 
   </style>
 <body>
@@ -326,7 +386,7 @@ color: rgb(255, 255, 255);
         <button class="button button1">✕</button>
        <div class="login">
         <div id="left">
-            <div>
+            <div  >
                 <p class="logintext">Login</p>
             <p class="info">
             <span>Get access to your <br> Orders, Wishlist and <br> Recommendations</span>
@@ -335,10 +395,10 @@ color: rgb(255, 255, 255);
         </p>
         </div>
         <div id="right">
-            <form >
+            <form id="loginpage" >
                 
                 <input type="number/email" name="email" class="input" id="emailinput" placeholder="Enter Email/Mobile number" required> <br>
-                <input type="new-password" id="passinput" class="input" placeholder="Enter Your Password" required> <br>
+                <input type="password" id="passinput" class="input" placeholder="Enter Your Password" required> <br>
                 <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
                 <input type="submit" class="btnlogin" value="Request OTP" >
             </form>
@@ -363,13 +423,16 @@ color: rgb(255, 255, 255);
         </div>
         <div id="right">
            
-            <form >
+            <form id="otprequest" >
                 <input type="otp" id="otpnumber" class="input" placeholder="Enter Your OTP" required> <br>
                 <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
-                <input type="submit" class="btnloginOtp" value="Verify" >
+                <input type="submit" class="btnloginOtp"  value="Verify" >
+                <div id="Veryfiing">
+                    <div class="loader"></div>
+                    <div>Verifying...</div>
+                </div>
             </form>
             <p class="resendotp">Not received your code? <span id="Resend">Resend code</span></p>
-            <a href="#" id="newaccount">New to Flipkart? Create an account</a>
         </div>
        </div>
     </div>
@@ -392,11 +455,11 @@ color: rgb(255, 255, 255);
         </p>
         </div>
         <div id="right">
-            <form >
+            <form id="signupPageDetails">
                 <input type="name" name="name" class="input" id="namesignup" placeholder="Enter Your Full Name" required> <br>
                 <input type="number/email" name="email" class="input" id="emailinputsignup" placeholder="Enter Email/Mobile number" required> <br>
-                <input type="new-password" id="passinputsigup1" class="input" placeholder="Enter Your Password" required> <br>
-                <input type="new-password" id="passinputsignup2" class="input" placeholder="Confirm Your Password" required> <br>
+                <input type="password" id="passinputsigup1" class="input" placeholder="Enter Your Password" required> <br>
+                <input type="password" id="passinputsignup2" class="input" placeholder="Confirm Your Password" required> <br>
                 <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
                 <input type="submit" class="btnlogin" id="btnsignup" value="CONTINUE" >
                 
@@ -410,8 +473,9 @@ color: rgb(255, 255, 255);
 <div class="otp-pop-up">
     <button class="button buttonotpshow">✕</button>
      <div >
-        <p class="otpshow otpname">Hai <span></span> </p>
-        <p class="otpshow"><span> </span>   is the verification code to log in to your Flipkart <br> account. Please DO NOT SHARE this code with anyone <br> including delivery agents.</p>
+        <p class="notification"> You Have a New Notification</p>
+        <p class="otpshow otpname">Hai <b id="otpname"></b> </p>
+        <p class="otpshow"><b id="randonotp"> </b>   is the verification code to log in to your Flipkart <br> account. <b> Please DO NOT SHARE </b> this code with anyone <br> including delivery agents.</p>
      </div>
 </div>
 
@@ -419,6 +483,9 @@ color: rgb(255, 255, 255);
 
 </body>
 <script>
+
+let LSSigndata=JSON.parse(localStorage.getItem("signinlogin"))||[];
+
   window.addEventListener("load", ()=>{
     setTimeout(() => {
         document.querySelector(".pop-up").classList.add("active");
@@ -428,10 +495,12 @@ color: rgb(255, 255, 255);
 
     document.querySelector(".sign").addEventListener("click", ()=>{
         document.querySelector(".pop-up").classList.add("active");
+        document.querySelector("body").classList.add("active");
     })
     
     document.querySelector(".pop-up .button1").addEventListener("click", ()=>{
         document.querySelector(".pop-up").classList.remove("active");
+        document.querySelector("body").classList.remove("active");
     })
 
 
@@ -443,18 +512,10 @@ color: rgb(255, 255, 255);
 
 
 // ********************************** otp page **********************************-->
-    let loginbtn = document.querySelector("form");
-
-    loginbtn.addEventListener("submit",(e) =>{
-        e.preventDefault();
-        document.querySelector(".pop-up").classList.remove("active");
-        document.querySelector(".pop-up-otp").classList.add("active");
-
-
-        setTimeout(() => {
-            document.querySelector(".otp-pop-up").classList.add("active");
-        }, 2000);
-    })
+   
+    
+        
+    
 
     // ********************************** signup page **********************************-->
 
@@ -474,9 +535,142 @@ color: rgb(255, 255, 255);
         document.querySelector(".pop-up-otp").classList.remove("active");
     })
 
+
     document.querySelector(".otp-pop-up .buttonotpshow").addEventListener("click", ()=>{
         document.querySelector(".otp-pop-up").classList.remove("active");
     })
    
+
+// ********************************** Local Storage SignUp Page **********************************-->
+
+
+
+let SignUpform = document.getElementById("signupPageDetails");
+let namesignup = document.getElementById("namesignup");
+let emailinputsignup = document.getElementById("emailinputsignup");
+let passinputsigup1 = document.getElementById("passinputsigup1");
+let passinputsignup2 = document.getElementById("passinputsignup2");
+
+
+
+SignUpform.addEventListener("submit",(e)=>{
+    e.preventDefault();
+   
+    let obj = {
+        fullname : namesignup.value,
+        email : emailinputsignup.value,
+        password : passinputsigup1.value
+    };
+
+
+
+  
+    let emailflag= true;
+    let pasflag= false;
+    let signflag=false;
+    LSSigndata.forEach(element => {
+        
+        if(emailinputsignup.value == element.email){
+            emailflag= false;
+           
+       }else{
+        if(passinputsigup1.value == passinputsignup2.value){
+            signflag=true;
+      
+   }else{
+    pasflag= true
+      
+   }
+       }
+    });
+
+    if(emailflag===false){
+        alert("You already registred") 
+    };
+
+    if(pasflag){
+        alert("password not same")
+    };
+
+    if(emailflag && signflag){
+        LSSigndata.push(obj);
+       localStorage.setItem("signinlogin", JSON.stringify(LSSigndata));
+    };
+
+    if(LSSigndata.length===0){
+      LSSigndata.push(obj);
+       localStorage.setItem("signinlogin", JSON.stringify(LSSigndata));
+  }
+    })
+
+
+// ********************************** Local Storage Login Page **********************************-->
+ let loginpage = document.getElementById("loginpage");
+ let emaillogininp = document.getElementById("emailinput");
+ let passlogininp = document.getElementById("passinput");
+   
+
+loginpage.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let count=0;
+    LSSigndata.forEach(element => {
+        if(emaillogininp.value == element.email && passlogininp.value == element.password){
+            count++;
+           otpdetails(element.fullname,Math.floor(Math.random()*1000000)) 
+
+            document.querySelector(".pop-up").classList.remove("active");
+            document.querySelector(".pop-up-otp").classList.add("active");
+
+
+            setTimeout(() => {
+            document.querySelector(".otp-pop-up").classList.add("active");
+            }, 2000);
+            
+
+
+        }
+      });
+      if(count===0){
+    console.log("Email or Password Incorrect");
+}
+})
+
+// ********************************** OTP Notification **********************************-->
+let otpname = document.getElementById("otpname");
+let otpnrndmotp = document.getElementById("randonotp");
+
+let otpinputbox = document.getElementById("otpnumber");
+let formotp = document.getElementById("otprequest");
+
+function otpdetails(name,otp){
+    otpname.textContent = name;
+    otpnrndmotp.textContent=otp;
+    // let uname= name;
+    // let uotp =otp;
+formotp.addEventListener("submit", (e) =>{
+    e.preventDefault()
+   
+   
+    
+    console.log("hai")
+   if(otpinputbox.value == otp){
+    console.log("login")
+    document.querySelector(".btnloginOtp").classList.add("active");
+    document.querySelector("#Veryfiing").classList.add("active");
+   setTimeout(() => {
+    document.querySelector("#Veryfiing").classList.remove("active");
+   }, 3000);
+   }else{
+    console.log("Not Matched")
+   }
+
+    
+
+})
+
+}
+
+
+
 </script>
 </html>
