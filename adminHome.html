@@ -5,8 +5,130 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            margin-bottom: 20px;
+        }
+        .card-list{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            margin-top: 50px;
+            
+            
+        }
+
+        #cart{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            position: relative;
+           width: 250px;
+          
+        
+        }
+        #cart img{
+           width: 100%;
+            margin: auto;
+            left: 10px;
+        }
+        .btn{
+            padding:8px;
+            border: none;
+            border-radius: 5px;
+            color:aliceblue;
+            position: relative; 
+        }
+        .edit{
+            background-color: green;
+            left:0px
+        }
+        .del{
+            background-color: red;
+            position: absolute;
+            left:70px;
+        }
+        
+
+    </style>
 </head>
 <body>
-    
+    <div>
+        
+    </div>
+    <hr>
+
+    <div id="container"></div>
+
 </body>
+<script>
+    let container=document.getElementById("container") 
+
+    dispaly()
+
+    async function dispaly(){
+       try{
+        let res=await fetch(`https://636f63f1bb9cf402c81694bd.mockapi.io/starproduct`,{
+            method:"GET",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            bosdy:JSON.stringify
+        })
+        console.log(res)
+        if(res.ok==true){
+            let data=await res.json()
+            console.log(data)
+            renderCardList(data)
+        }
+       }catch(error){
+            console.log(error)
+       }
+    }
+
+    function renderCardList(cardData) {
+  let cardList = `
+    <div class="card-list">
+      ${cardData
+        .map((item) =>
+          getCard(
+            item.id,
+            item.thumbnail,
+            item.title,
+            item.description,
+            item.price,
+            item.rating,
+          )
+        )
+        .join("")}
+    </div>
+  `;
+  container.innerHTML = cardList;
+}
+
+    function getCard(id,image,title,desc,price,rating){
+        let cart= 
+        `<div id=cart>
+            <div id=${id}>
+            <img src=${image} alt="image">
+            </div>
+            <p>id ${id}</p>
+            <div>
+                <p>${title}</p>
+                <p>${desc}</p>
+                <p>Price ${price} <span class="fa fa star">${rating}</span></p>
+            </div>
+
+            <div class="btn">
+                <button class="btn edit">Edit</button>
+                <button class="btn del">Delete</button>
+             </div>
+        </div>`
+        console.log(cart)
+
+        return cart
+    }
+
+       
+ 
+</script>
 </html>
