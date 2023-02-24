@@ -5,27 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	
-
-	<link rel="stylesheet" href="style/adminHome.css">
+	<!-- My CSS -->
+	<link rel="stylesheet" href="./style/product.css">
 	<link rel="shortcut icon" href="logo-black.png" type="image/x-icon">
-
-    
 </head>
 <body>
-    <!-- --------------letft side--------------->
-    
-	<!-- SIDEBAR START-->
+
+  
+    <!-- SIDEBAR START-->
 	<section id="sidebar">
 		<a href="#" class="Admin">
 			<i class='bx bxs-crown' ></i>
 			<span class="text">Admin</span>
 		</a>
 		<ul class="side-menu top">
-			<li class="active">
-				<a href="adminHome.html">
+			<li>
+				<a href="Admin.html">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -36,7 +32,7 @@
 					<span class="text">Users</span>
 				</a>
 			</li>
-			<li>
+			<li  class="active">
 				<a href="product.html">
 					<i class='bx bxs-box'></i>
 					<span class="text">Products</span>
@@ -55,7 +51,6 @@
 				</a>
 			</li>
 		</ul>
-
 		<ul class="side-menu">
 			<li>
 				<a href="signin.html" class="logout">
@@ -74,7 +69,7 @@
 		<!-- NAVBAR START-->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<a href="#" class="nav-link">Categories</a>
+			<a href="#" class="nav-link">Products</a>
 			<form action="#">
 				<div class="form-input">
 					<input type="search" placeholder="Search...">
@@ -88,73 +83,42 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard Analytics</h1>
+					<h1>Product Details</h1>
 				</div>
 			</div>
 
-			<ul class="box-info">
-				<li>
-					<i class='bx bxs-cart' ></i>
-					<span class="text">
-						<h3 id="totalProducts"></h3>
-						<p>Our Products</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-group' ></i>
-					<span class="text">
-						<h3 id="totalOrders">2346</h3>
-						<p>Total Users</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-truck' ></i>>
-					<span class="text">
-						<h3>2543</h3>
-						<p>Total Orders</p>
-					</span>
-				</li>
-			</ul>
-
-
+			 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Recent Orders</h3>
+						<h3>PRODUCTS</h3>
 						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
 						<thead>
-							<tr>
-								<th>User</th>
-								<th>Date Order</th>
+							<tr class="thead">
+								<th >Product ID</th>
+								<th> Brand</th>
+								<th>Name</th>
+								<th>Product Type</th>
 								<th>Price</th>
-								<th>Status</th>
+								<th>Image</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>
-									John Doe
-								</td>
-								<td>01-10-2021</td>
-								<td>$244</td>
-								<td>Compleated</td>
-							</tr>
+						<tbody id="Products">
 						</tbody>
 					</table>
 				</div>
-				
 				
 		</main>
 		<!-- MAIN PART END -->
 	</section>
 	<!-- CONTENT PART END -->
-</body>
-</html>
-</body>
+	
 
+	<script src="./product.js"></script>
+
+
+</body>
 </html>
-<script src="/adminHome.js">
-</script>
