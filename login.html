@@ -8,9 +8,10 @@
 </head>
 <style>
     body{
-        background-color: lightblue;
+       background: url("https://img.freepik.com/free-vector/seamless-white-interlaced-rounded-arc-patterned-background_53876-97975.jpg?w=2000&t=st=1677220504~exp=1677221104~hmac=dee9aacc7827b797a2e2937d22adef9d2627d288893568161927ddb7df30b94d");
     }
     body.active{
+        z-index: 2;
         background-color: rgba(0,0,0,0.5);
     }
     .pop-up {
@@ -377,8 +378,117 @@ color: rgb(255, 255, 255);
     display: flex;
 }
 
+#creaating{
+    width: 359px;
+    height: 45px;
+    display: flex;
+      display: none;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    border: none;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #FB641B;
+}
+
+#creaating.active{
+    display: flex;
+}
+
+#created{
+    width: 359px;
+    height: 45px;
+    display: flex;
+      display: none;
+      margin: auto;
+
+      justify-content: center;
+      align-items: center;
+   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    border: none;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2874f0db;
+}
 
 
+.animated-check {
+    margin-right: 10px;
+    height: 30px;
+    width: 30px
+}
+
+.animated-check path {
+    fill: none;
+    stroke: #7ac142;
+    stroke-width: 4;
+    stroke-dasharray: 23;
+    stroke-dashoffset: 23;
+    animation: draw 1s linear forwards;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+.existingbtn.active{
+ display: none;
+}
+
+.existingbtnhide.active{
+    display: none;
+}
+
+#creaating.active{
+    display: flex;
+}
+
+#created.active{
+    display: flex;
+}
+
+#redirecting{
+    width: 359px;
+    height: 45px;
+    display: flex;
+      display: none;
+      margin: auto;
+
+      justify-content: center;
+      align-items: center;
+   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    border: none;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2874f0db;
+}
+
+#redirecting.active{
+    display: flex;
+}
+.alertmessage{
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(252, 0, 0);
+    position: relative;
+    bottom: 15px;
+}
   </style>
 <body>
     <button class="sign">Click Here</button>
@@ -399,6 +509,7 @@ color: rgb(255, 255, 255);
                 
                 <input type="number/email" name="email" class="input" id="emailinput" placeholder="Enter Email/Mobile number" required> <br>
                 <input type="password" id="passinput" class="input" placeholder="Enter Your Password" required> <br>
+                <p class="alertmessage loginalertmessage"> </p>
                 <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
                 <input type="submit" class="btnlogin" value="Request OTP" >
             </form>
@@ -425,6 +536,7 @@ color: rgb(255, 255, 255);
            
             <form id="otprequest" >
                 <input type="otp" id="otpnumber" class="input" placeholder="Enter Your OTP" required> <br>
+                <p class="alertmessage otpincorrectalertmessage"> </p>
                 <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
                 <input type="submit" class="btnloginOtp"  value="Verify" >
                 <div id="Veryfiing">
@@ -460,11 +572,28 @@ color: rgb(255, 255, 255);
                 <input type="number/email" name="email" class="input" id="emailinputsignup" placeholder="Enter Email/Mobile number" required> <br>
                 <input type="password" id="passinputsigup1" class="input" placeholder="Enter Your Password" required> <br>
                 <input type="password" id="passinputsignup2" class="input" placeholder="Confirm Your Password" required> <br>
+
+                <p class="alertmessage signupalertmessage"> </p>
+                <p class="alertmessage signuppasswordalertmessage"> </p>
                 <p>By continuing, you agree to Flipkart's <span class="T_C">Terms of Use</span> and <span class="T_C">Privacy Policy.</span> </p>
-                <input type="submit" class="btnlogin" id="btnsignup" value="CONTINUE" >
+                <input type="submit" class="btnlogin existingbtnhide" id="btnsignup" value="Create Account" >
                 
             </form>
             <button type="submit" class="existingbtn" >Existing User? Log in</button> 
+            <div id="creaating">
+                <div class="loader" style="border-top: 5px solid  #FB641B;"></div>
+                <div>Creating Account...</div>
+                
+            </div>
+            <div id="created">
+                <svg class="animated-check" viewBox="0 0 24 24">
+                    <path d="M4.1 12.7L9 17.6 20.3 6.3" fill="none" /> </svg>
+            <p>Registration Successful</p>
+            </div>
+            <div id="redirecting">
+                <div class="loader"></div>
+                <div>Redirecting to Login Page...</div>
+            </div>
         </div>
        </div>
     </div>
@@ -474,7 +603,7 @@ color: rgb(255, 255, 255);
     <button class="button buttonotpshow">✕</button>
      <div >
         <p class="notification"> You Have a New Notification</p>
-        <p class="otpshow otpname">Hai <b id="otpname"></b> </p>
+        <p class="otpshow otpname">Hai <b id="otpname"></b>,</p>
         <p class="otpshow"><b id="randonotp"> </b>   is the verification code to log in to your Flipkart <br> account. <b> Please DO NOT SHARE </b> this code with anyone <br> including delivery agents.</p>
      </div>
 </div>
@@ -513,9 +642,16 @@ let LSSigndata=JSON.parse(localStorage.getItem("signinlogin"))||[];
 
 // ********************************** otp page **********************************-->
    
-    
+    let ResendOtp = document.querySelector("#Resend");
+
+    ResendOtp.addEventListener("click", ()=>{
+        document.querySelector(".otp-pop-up").classList.add("active");
+    })
         
-    
+    setTimeout(() => {
+            document.querySelector(".otp-pop-up").classList.remove("active");
+            }, 20000);
+
 
     // ********************************** signup page **********************************-->
 
@@ -540,7 +676,7 @@ let LSSigndata=JSON.parse(localStorage.getItem("signinlogin"))||[];
         document.querySelector(".otp-pop-up").classList.remove("active");
     })
    
-
+   
 // ********************************** Local Storage SignUp Page **********************************-->
 
 
@@ -551,7 +687,8 @@ let emailinputsignup = document.getElementById("emailinputsignup");
 let passinputsigup1 = document.getElementById("passinputsigup1");
 let passinputsignup2 = document.getElementById("passinputsignup2");
 
-
+let signupalredyalert = document.querySelector(".signupalertmessage");
+let signuppasswordalertmessage = document.querySelector(".signuppasswordalertmessage")
 
 SignUpform.addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -582,19 +719,63 @@ SignUpform.addEventListener("submit",(e)=>{
       
    }
        }
+
+   
+    
     });
 
     if(emailflag===false){
-        alert("You already registred") 
+        signupalredyalert.textContent= "Entered email or number is already registered"
+
+        setTimeout(() => {
+            signupalredyalert.textContent=null;
+        }, 3000);
     };
 
     if(pasflag){
-        alert("password not same")
+        signuppasswordalertmessage.textContent ="Please make sure your passwords match."
+        setTimeout(() => {
+            signuppasswordalertmessage.textContent=null;
+        }, 3000);
     };
 
     if(emailflag && signflag){
         LSSigndata.push(obj);
        localStorage.setItem("signinlogin", JSON.stringify(LSSigndata));
+
+       document.querySelector(".existingbtn").classList.add("active");
+     document.querySelector(".existingbtnhide").classList.add("active");
+       document.querySelector("#creaating").classList.add("active");
+      
+      setTimeout(() => {
+         document.querySelector("#creaating").classList.remove("active");
+         document.querySelector("#created").classList.add("active");
+      }, 3000);
+ 
+ 
+ 
+      setTimeout(() => {
+         document.querySelector("#created").classList.remove("active");
+         document.querySelector("#redirecting").classList.add("active");
+      }, 6000);
+ 
+      setTimeout(() => {
+         document.querySelector("#redirecting").classList.remove("active");
+         document.querySelector(".pop-up-sign-up").classList.remove("active");
+         document.querySelector(".pop-up").classList.add("active");
+       
+      }, 8000);
+
+      setTimeout(() => {
+        document.querySelector(".existingbtn").classList.remove("active");
+        document.querySelector(".existingbtnhide").classList.remove("active");
+      }, 9000);
+
+        namesignup.value = null;
+        emailinputsignup.value = null;
+        passinputsigup1.value = null;
+        passinputsignup2.value = null;
+ 
     };
 
     if(LSSigndata.length===0){
@@ -608,7 +789,7 @@ SignUpform.addEventListener("submit",(e)=>{
  let loginpage = document.getElementById("loginpage");
  let emaillogininp = document.getElementById("emailinput");
  let passlogininp = document.getElementById("passinput");
-   
+let alertmessagelogin = document.querySelector(".loginalertmessage");
 
 loginpage.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -626,12 +807,18 @@ loginpage.addEventListener("submit", (e)=>{
             document.querySelector(".otp-pop-up").classList.add("active");
             }, 2000);
             
+            setTimeout(() => {
+            document.querySelector(".otp-pop-up").classList.remove("active");
+            }, 20000);
 
 
         }
       });
       if(count===0){
-    console.log("Email or Password Incorrect");
+        alertmessagelogin.textContent= "The Email /Number or password you entered is incorrect."
+        setTimeout(() => {
+            alertmessagelogin.textContent=null;
+        }, 3000);
 }
 })
 
@@ -641,6 +828,8 @@ let otpnrndmotp = document.getElementById("randonotp");
 
 let otpinputbox = document.getElementById("otpnumber");
 let formotp = document.getElementById("otprequest");
+
+let otpincorrect = document.querySelector(".otpincorrectalertmessage");
 
 function otpdetails(name,otp){
     otpname.textContent = name;
@@ -661,7 +850,10 @@ formotp.addEventListener("submit", (e) =>{
     document.querySelector("#Veryfiing").classList.remove("active");
    }, 3000);
    }else{
-    console.log("Not Matched")
+    otpincorrect.textContent ="OTP is Incorrect";
+    setTimeout(() => {
+        otpincorrect.textContent=null;
+        }, 3000);
    }
 
     
