@@ -176,10 +176,11 @@ img{
    <script>
      
     //  let countOfProducts=localStorage.getItem('count')||1;
+    let products=JSON.parse(localStorage.getItem("products"))||[]
      let container=document.getElementById("container")
 
+     let carti=JSON.parse(localStorage.getItem("addToCart"))||[]
      
-     let products=JSON.parse(localStorage.getItem("products"))||[]
 displayProducts(products)
      
      //display Products
@@ -222,7 +223,10 @@ displayProducts(products)
 
    let buttons=document.createElement("button")
    buttons.innerText="Add to Cart"
-
+    buttons.addEventListener("click",function(){
+      carti.push(product)
+      localStorage.setItem("addToCart",JSON.stringify(carti))
+    })
       
             
           
