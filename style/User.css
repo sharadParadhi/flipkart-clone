@@ -402,6 +402,14 @@ body {
 	border-radius: 20px;
 	font-weight: 700;
 }
+#logout{
+	border: none;
+	background-color: #eee;
+}
+
+#logout:hover{
+	background-color: rgb(215, 26, 26)
+}
 
 /* MAIN */
 /* CONTENT */

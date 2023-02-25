@@ -1,6 +1,8 @@
 let container=document.getElementById("container") 
 let totalProduct=document.getElementById("totalProducts")
 
+let logout=document.getElementById("logout")
+
 
 console.log("hii")
 
@@ -70,8 +72,11 @@ console.log("hii")
         return cart
     }
     
-    function onclick(){
-        console.log("hello")
-    }
     
     
+    //logout
+     logout.addEventListener("click",()=>{
+        console.log("hii")
+        alert("logout Successfull")
+        window.location.href="adminHome.html"
+     })

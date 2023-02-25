@@ -2,8 +2,11 @@
 let Products=document.getElementById("Products")
 
 
+window.addEventListener("load",()=>{
+  dispaly()
+  console.log("work")
+})
 
-dispaly()
 
     async function dispaly(){
        try{
@@ -12,7 +15,7 @@ dispaly()
             headers:{
                 "Content-Type":"application/json",
             },
-            bosdy:JSON.stringify
+            body:JSON.stringify()
         })
         console.log(res)
         if(res.ok==true){
@@ -64,4 +67,9 @@ dispaly()
         console.log("hello")
     }
     
-    
+    let logout=document.getElementById("logout")
+     logout.addEventListener("click",()=>{
+        console.log("hii")
+        alert("logout Successfull")
+        window.location.href="adminHome.html"
+     })

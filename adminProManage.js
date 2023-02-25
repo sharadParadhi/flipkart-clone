@@ -1,6 +1,11 @@
 let Products=document.getElementById("Products")
 
+let baseurl="https://636f63f1bb9cf402c81694bd.mockapi.io/starproduct"
 
+let logout=document.getElementById("logout")
+
+
+let fetchdata=[]
 
 dispaly()
 
@@ -17,48 +22,82 @@ dispaly()
         if(res.ok==true){
             let data=await res.json()
             console.log(data)
+            fetchdata=data
             
-            renderCardList(data)
+            renderCardList(fetchdata)
         }
        }catch(error){
             console.log(error)
        }
     }
 
-    function renderCardList(cardData) {
-  let cardList = `
-    <div class="card-list">
-      ${cardData
-        .map((item) =>
-          getCard(
-            item.id,
-            item.brand,
-            item.title,
-            item.rating,
-            item.price,
-            item.thumbnail,
-          )
-        )
-        .join("")}
-    </div>
-  `;
-  Products.innerHTML = cardList;
+    
+
   
-}
 
-    function getCard(id,brand,title,rating,price,image){
-        let cart= 
-        `<tr>
-            <td>${id}</td>
-            <td>${brand}</td>
-            <td>${title}</td>
-            <td>${rating}</td>
-            <td>${price}</td>
-           <td><button>Delete</button></td>
-           
-        </tr>`
+// Creating Dom
 
-        return cart
-    }
+function renderCardList(Data){
+
+    // Creating elements For Each Products
+    Products.innerText=null
+
+    Data.forEach(function(product,name){
+        let div=document.createElement("tr");
+        let ID=document.createElement("td");
+        ID.innerText=product.id;
+        let Brand=document.createElement("td");
+        Brand.innerText=product.brand;
+        let Name=document.createElement("td");
+        Name.innerText=product.title;
+        let ProductType=document.createElement("td");
+        ProductType.innerText=product.rating;
+        let Price=document.createElement("td");
+        Price.innerText=product.price;
+        let Imagetd=document.createElement("td");
+        let delbtn=document.createElement("button");
+        delbtn.innerText="Delete"
+
+
+        // Deleting function onclicking
+        Imagetd.addEventListener("click",()=>{
+
+            console.log(product.id);
+
+            fetch(`${baseurl}/${product.id}`,{
+                method:'DELETE',
+                headers:{
+                    'Content-Type':'application/json'
+                }
+        
+            })
+            .then((res)=>{
+                return res.json
+            })
+            .then((data)=>{
+              console.log(data)
+               alert("Product Deleted Succesfully")
+               window.location.reload()
+              
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+        })
+
+
+        // Appending Created Elements
+        Imagetd.append(delbtn);
+        div.append(ID,Brand,Name,ProductType,Price,Imagetd);
+        Products.append(div);
+
+    })
     
-    
+  }
+
+  
+     logout.addEventListener("click",()=>{
+        console.log("hii")
+        alert("logout Successfull")
+        window.location.href="adminHome.html"
+     })

@@ -198,6 +198,7 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 1000;
+	background-color: #1178e0;
 }
 #content nav::before {
 	content: '';
@@ -257,6 +258,14 @@ body {
 	outline: none;
 	border-radius: 0 36px 36px 0;
 	cursor: pointer;
+}
+#logout{
+	border: none;
+	background-color: #eee;
+}
+
+#logout:hover{
+	background-color: rgb(215, 26, 26)
 }
 /* NAVBAR */
 

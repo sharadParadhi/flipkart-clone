@@ -164,6 +164,14 @@ body {
 	display: flex;
 	justify-content: center;
 }
+#logout{
+	border: none;
+	background-color: #eee;
+}
+
+#logout:hover{
+	background-color: rgb(215, 26, 26)
+}
 /* SIDEBAR */
 
 

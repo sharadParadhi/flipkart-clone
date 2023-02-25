@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/style/adminProAdd.css">
+    <link rel="shortcut icon" href="logo-black.png" type="image/x-icon">
+    <title></title>
+</head>
+
+<body>
+
+
+    <!-- SIDEBAR START-->
+    <section id="sidebar">
+        <a href="#" class="Admin">
+            <i class='bx bxs-crown'></i>
+            <span class="text">Admin</span>
+        </a>
+        <ul class="side-menu top">
+            <li>
+                <a href="adminHome.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="User.html">
+                    <i class='bx bxs-user-detail'></i>
+                    <span class="text">Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="product.html">
+                    <i class='bx bxs-box'></i>
+                    <span class="text">Products</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="adminProAdd.html">
+                    <i class='bx bx-plus-medical'></i>
+                    <span class="text">Add / Update</span>
+                </a>
+            </li>
+            <li>
+                <a href="/adminProManage.html">
+                    <i class='bx bxs-data'></i>
+                    <span class="text">Manage Product</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <button class="text" id="logout">Logout</button>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR END -->
+
+
+
+    <!-- CONTENT PART START-->
+    <section id="content">
+        <!-- NAVBAR START-->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <a href="#" class="nav-link">Categories</a>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+        </nav>
+        <!-- NAVBAR END-->
+
+        <!-- MAIN PART START-->
+        <main>
+            <div class="head-title">
+                <div class="left">
+                    <h1>Add Or Update The Products</h1>
+                </div>
+            </div>
+
+            <ul class="box-info">
+                <li>
+                    <i class='bx bxs-cart'></i>
+                    <span class="text">
+                        <h3 id="totalProducts"></h3>
+                        <p>Our Products</p>
+                    </span>
+                </li>
+            </ul>
+
+
+            <div class="table-data">
+                <div class="order">
+                    <div class="head">
+                        <form id="msform">
+                            <!-- fieldsets -->
+                            <fieldset>
+                              <h2 class="fs-title">Add Product</h2>
+                              <input type="text" name="brand" placeholder="id" id="id"/>
+                              <input type="text" name="brand" placeholder="brand" id="brand"/>
+                              <input type="text" name="name" placeholder="Title" id="title"/>
+                              <input type="text" name="description" placeholder="Description" id="description"/>
+                              <input type="text" name="price" placeholder="Price" id="price"/>
+                              <input type="text" name="rating" placeholder="Rating" id="rating"/>
+                              <input type="url" name="imageurl" placeholder="ImageUrl" id="thumbnail"/>
+                              <input type="text" name="stock" placeholder="stock" id="stock"/>
+                              <input type="text" name="discountPercentage" placeholder="discount" id="discountPercentage"/>
+                              <input type="text" name="category" placeholder="category" id="category"/>
+                              <input type="text" name="images" placeholder="image no" id="images"/>
+                            
+                              <input type="button" name="Add" class="next action-button" value="Add" id="Add"/>
+                              <input type="button" name="Update" class="next action-button" value="Update" id="Update"/>
+                             
+                            </fieldset>
+                          </form>
+                    </div>
+
+                    
+
+                    <div id="imagecont">
+                        <img id="updateImage" src="" alt="">
+                    </div>
+                    <div>
+                        <h3 id="h3Brand"></h3>
+                        <h3 id="h3name"></h3>
+                        <p id="desc"></p>
+                        <h3 id="h3price"></h3>
+                    </div>
+                </div>
+
+        </main>
+        <!-- MAIN PART END -->
+    </section>
+    <!-- CONTENT PART END -->
+
+
+    <script src="/adminProAdd.js"></script>
+</body>
+
+</html>
