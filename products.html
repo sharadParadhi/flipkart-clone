@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+      *{
+    box-sizing: border-box;
+}
+
+main{
+    margin-top: 108px;
+}
+body{
+    background-color: #d8d8d8;
+}
+#slideShow1{
+    width: 95%;
+    margin: auto;
+}
+/* #slideShow1 img,#logos img,#paymentImg img,#categories img,.{
+    width: 100%;
+} */
+
+img{
+    width: 100%;
+}
+ #logos{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    gap: 20px;  
+}
+
+#paymentImg{
+    display: flex;
+    width: 65%;
+    margin: auto;
+    justify-content: space-around;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+#categories,#container{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 16px;
+}
+
+.staticImg{
+    width: 95%;
+    margin: auto;
+    margin-top: 34px;
+    margin-bottom: 34px;
+}
+
+#container{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 25px;
+    line-height: 34px;
+    
+}
+#container .cart{
+    padding: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+}
+
+.rating{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productsBtn,.increamentBtn,.decreamentBtn,.removeBtn,#TotalPrice button{
+    background-color:rgb(58, 56, 56);
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 7px 0px;
+    border-radius: 3px;
+    cursor: pointer;
+    
+}
+
+#functionality{
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    margin: auto;
+    margin-bottom: 10px;
+   }
+  select,#lower,#upper,#filterByPrice-btn{
+    background-color: rgb(58, 56, 56);
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  select:hover,button:hover,#TotalPrice button:hover,#filterByPrice-btn:hover{
+    background-color: red;
+  }
+
+  #TotalPrice{
+    width: 50%;
+    margin: auto;
+    margin-top: 19px;
+  }
+
+  #TotalPrice button{
+    position: relative;
+    bottom: 7px;
+  }
+
+  button{
+    border: none;
+  }
+  /* #star{
+    width: 12px;
+    background-color: red;
+  } */
+  #star img{
+    width: 15px;
+  }
+    </style>
+    
+    
+</head>
+<body>
+    <header></header>
+
+    <main>
+      <div id="functionality">
+        <!-- <h3>Filters and Sort</h3> -->
+        <div id="filterByPrice">
+           <input type="number" id="lower" placeholder="Add Minimun Price">
+           <input type="number" id="upper" placeholder="Add Maximum Price">
+           <button id="filterByPrice-btn">submit</button>
+       </div>
+
+       <div id="sortDiv">
+           <select id="sort">
+               <option value="">Sort By Price</option>
+               <option value="lowToHigh">lowToHigh</option>
+               <option value="highToLow">highToLow</option>
+           </select>
+       </div>
+
+       <div id="sortByRating">
+           <select id="ratingSort">
+               <option value="">Filter By Rating</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option> 
+           </select>
+       </div>
+   </div>
+
+        <div id="container"> </div>
+    </main>
+    <footer></footer>
+</body>
+   <script>
+     
+    //  let countOfProducts=localStorage.getItem('count')||1;
+     let container=document.getElementById("container")
+
+     
+     let products=JSON.parse(localStorage.getItem("products"))||[]
+displayProducts(products)
+     
+     //display Products
+     function displayProducts(data) {
+  container.innerHTML = "";
+
+  
+
+  data.forEach((product) => {
+    let card = document.createElement("div");
+    card.classList.add("cart");
+
+    let image = document.createElement("img");
+    image.setAttribute("src",product.image)
+    image.classList.add("image");
+    
+    //card.appendChild(image);
+
+    let name = document.createElement("h3");
+    name.textContent = product.title;
+    name.classList.add("title");
+    
+
+    let description = document.createElement("p");
+    description.textContent = product.description;
+    description.classList.add("desc");
+
+    //card.appendChild(description);
+
+    let cost=document.createElement("p")
+    cost.innerText=product.price
+    cost.classList.add("price");
+
+    let rating = document.createElement("p");
+    rating.classList.add("rating");
+    rating.textContent = product.rating.rate;
+    for (let i = 0; i < 5; i++) {
+      let icon = document.createElement("img");
+      icon.src = "icons8.png";}
+
+   let buttons=document.createElement("button")
+   buttons.innerText="Add to Cart"
+
+      
+            
+          
+    
+
+    card.append(image,name,description,cost,rating,buttons);
+container.append(card)
+            
+          })
+
+          
+
+          //get all buttons and add event lisner to button
+                 
+     }
+
+     //functionality
+     let lower=document.getElementById("lower")
+     let upper=document.getElementById('upper')
+     let filterByPrice_btn=document.getElementById("filterByPrice-btn")
+     filterByPrice_btn.addEventListener("click",()=>{
+         let filterData= products.filter((e)=>{
+            if(e.price>=lower.value && e.price<=upper.value)
+            {
+                return e
+            }
+        })
+        displayProducts(filterData)
+     })
+
+    //sort
+     let sort=document.getElementById("sort")
+     sort.addEventListener('change',()=>{
+      if(sort.value===""){
+        displayProducts(products)
+      }else if(sort.value==="highToLow"){
+        let filterData=products.sort((e,e2)=>{
+            return e2.price-e.price
+         })
+        displayProducts(filterData)
+      }else if(sort.value==="lowToHigh"){
+        let filterData=products.sort((e,e2)=>{
+            return e.price-e2.price
+         })
+        displayProducts(filterData)
+      }
+
+     })
+
+     //sortRating
+     let ratingSort=document.getElementById("ratingSort")
+     ratingSort.addEventListener("change",()=>{
+       if(ratingSort.value==="")
+       {
+        displayProducts(products)
+       }else{
+          let filterData=products.filter((e)=>{
+             return Math.floor(+(e.rating['rate']))===+ratingSort.value
+          })
+          console.log(filterData,ratingSort.value)
+          displayProducts(filterData)
+       }
+     })
+
+
+
+   </script>
+</html>
+<script>
+  $(function () {
+      $('header').load('header.html');
+  }) 
+</script>
+
+<script>
+  $(function () {
+      $('footer').load('footer.html');
+  }) 
+</script>
+
+
+

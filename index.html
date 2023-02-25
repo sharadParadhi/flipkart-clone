@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    box-sizing: border-box;
+}
+
+main{
+    margin-top: 108px;
+}
+body{
+    background-color: #d8d8d8;
+}
+#slideShow1{
+    width: 95%;
+    margin: auto;
+}
+/* #slideShow1 img,#logos img,#paymentImg img,#categories img,.{
+    width: 100%;
+} */
+
+img{
+    width: 100%;
+}
+ #logos{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    gap: 20px;  
+}
+
+#paymentImg{
+    display: flex;
+    width: 65%;
+    margin: auto;
+    justify-content: space-around;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+#categories,#container{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 16px;
+}
+
+.staticImg{
+    width: 95%;
+    margin: auto;
+    margin-top: 34px;
+    margin-bottom: 34px;
+}
+
+#container{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 25px;
+    line-height: 34px;
+    
+}
+#container .cart{
+    padding: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+}
+
+.rating{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productsBtn,.increamentBtn,.decreamentBtn,.removeBtn,#TotalPrice button{
+    background-color:rgb(58, 56, 56);
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 7px 0px;
+    border-radius: 3px;
+    cursor: pointer;
+    
+}
+
+#functionality{
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    margin: auto;
+    margin-bottom: 10px;
+   }
+  select,#lower,#upper,#filterByPrice-btn{
+    background-color: rgb(58, 56, 56);
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  select:hover,button:hover,#TotalPrice button:hover,#filterByPrice-btn:hover{
+    background-color: red;
+  }
+
+  #TotalPrice{
+    width: 50%;
+    margin: auto;
+    margin-top: 19px;
+  }
+
+  #TotalPrice button{
+    position: relative;
+    bottom: 7px;
+  }
+
+  button{
+    border: none;
+  }
+  /* #star{
+    width: 12px;
+    background-color: red;
+  } */
+  #star img{
+    width: 15px;
+  }
+    
+    </style>
+</head>
+<body>
+    <main style="margin-top:106px">
+        <div id="slideShow1"><img src="https://rukminim1.flixcart.com/fk-p-flap/844/140/image/d889dfee0ed6c044.jpg?q=50" id="slideImg"></div>
+
+         <div id="logos">
+            <div id="menWear"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519822749726.jpg"></div>
+            <div><a href="./products.html" id="shoes"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519822782494.jpg"></a></div>
+            <div><a href="#" id="beauty"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519822815262.jpg"></a></div>
+            <div><a href="./products.html" id="womenWear"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519822848030.jpg"></a></div>
+            <div><a href="#" id="furniture"><img src="https://assets.tatacliq.com/medias/sys_master/images/45536787791902.gif"></a></div>
+            <div><a href="./products.html" id="electronics"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519822880798.jpg"></a></div>
+            <div><a href="#" id="homeProducts"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519822913566.jpg"></a></div>
+            <div><a href="#" id="kidsWear"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519822946334.jpg"></a></div>
+            <div><a href="./products.html" id="watch"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519822979102.jpg"></a></div>
+            <div><a href="./products.html" id="jewelery"><img src="https://assets.tatacliq.com/medias/sys_master/images/45519823011870.jpg"></a></div>
+         </div>
+</body>
+<script>
+    let slideShow1=[
+    'https://rukminim1.flixcart.com/fk-p-flap/50/50/image/28e4abe7fd5dbf22.jpg?q=50',
+    'https://rukminim1.flixcart.com/flap/50/50/image/e0c3c470bc6c68d7.jpg?q=50',
+    'https://rukminim1.flixcart.com/fk-p-flap/50/50/image/beacdf4c7793a4b2.jpg?q=50',
+    'https://rukminim1.flixcart.com/flap/50/50/image/e0c3c470bc6c68d7.jpg?q=50'
+]
+
+let slideImg=document.getElementById("slideImg")
+let i=0;
+setInterval(()=>{
+   if(i==slideShow1.length){
+    i=0;
+   }
+    slideImg.src=slideShow1[i++]
+   
+},2500)
+
+
+
+//******************************************
+window.addEventListener("load",()=>{
+    getProductsData()
+})
+
+async function getProductsData(){
+    let res= await fetch("https://vishalserv.onrender.com/products")
+    let data= await res.json()
+    //console.log(data)
+
+    //#logo
+ document.getElementById("menWear").addEventListener("click",()=>{
+           let menWearData=data.filter((el)=>{
+               return el.category==='menwear'
+           })
+           console.log(menWearData)
+        localStorage.setItem("products",JSON.stringify(menWearData))
+})
+
+ document.getElementById("shoes").addEventListener("click",()=>{
+        let shoesData=data.filter((el)=>{
+            return el.category==='shoes'
+        })
+     localStorage.setItem("products",JSON.stringify(shoesData))
+ })
+
+ document.getElementById("jewelery").addEventListener("click",()=>{
+    let jeweleryData=data.filter((el)=>{
+        return el.category==='jewelery'
+    })
+ localStorage.setItem("products",JSON.stringify(jeweleryData))
+})
+
+document.getElementById("electronics").addEventListener("click",()=>{
+    let electronicsData=data.filter((el)=>{
+        return el.category==='electronics'
+    })
+ localStorage.setItem("products",JSON.stringify(electronicsData))
+})
+
+document.getElementById("womenWear").addEventListener("click",()=>{
+    let womenWearData=data.filter((el)=>{
+        return el.category==='womenwear'
+    })
+ localStorage.setItem("products",JSON.stringify(womenWearData))
+})
+
+document.getElementById("watch").addEventListener("click",()=>{
+    let watchData=data.filter((el)=>{
+        return el.category==='watch'
+    })
+ localStorage.setItem("products",JSON.stringify(watchData))
+})
+}
+</script>
+</html>
