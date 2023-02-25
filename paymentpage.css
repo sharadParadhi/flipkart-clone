@@ -1,0 +1,386 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    background-color: #f1f3f6;
+    color: #212121;
+    
+    font-family: Roboto,Arial,sans-serif;
+    letter-spacing: 0;
+}
+
+nav{
+    width: 100%;
+    height: 56px;
+    background-color: #2874f0;
+    position: sticky;
+}
+nav img{
+    width: 150px;
+    height: 56px;
+    position: relative;
+    left: 250px;
+}
+
+
+.left{
+    width: 850px;
+   
+    margin-right: 20px;
+    
+}
+
+.right{
+    border: 1px solid black;
+    width: 368px;
+    height: 20px;
+}
+
+#main{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logindetails{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: flex-start;
+   
+    border-radius: 2px;
+    background-color: #fff;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+}
+
+.numbers{
+    font-size: 13px;
+    color: #2874f0;
+    background-color: #ece6e6;
+    border-radius: 2px;
+    padding: 3px 7px;
+    width: 9px;
+   height: 16px;
+    margin-left: 30px;
+}
+
+
+.logintext{
+    color: #878787;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.tickicon {
+    vertical-align: top;
+    height: 20px;
+    margin-left: 8px;
+}
+
+.nameandmail{
+
+    margin-top: 14px;
+    margin-left: 10px;
+}
+.displayname{
+    font-weight: 600;
+}
+
+.chnagebtn{
+    padding: 0 32px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid #e0e0e0;
+    color: #2874f0;
+    font-size: 14px;
+    font-weight: 580;
+    background: #fff;
+    margin-left: auto;
+    margin-top: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.address{
+    width: 100%;
+    background-color: #F5FAFF;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+  
+}
+.address.active{
+    display: none;
+}
+
+.number2{
+    font-size: 13px;
+    color: #2874f0;
+    background-color: #F0F0F0;
+    border-radius: 2px;
+    padding: 3px 7px;
+    width: 9px;
+   height: 16px;
+  
+    margin-left: 30px;
+   position: relative;
+  top: 2px;
+
+}
+
+.tiltleadress{
+    width: 100%;
+    height: 50px;
+    text-transform: uppercase;
+    background-color: #2874f0;
+ display: flex;
+ align-content: center;
+}
+.delitext{
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.location{
+    margin-bottom: 16px;
+}
+#inputsadress{
+   margin-left: 57px;
+    margin-top: 16px;
+    width: 700px;
+}
+
+.locationbtn{
+  
+    background: #2874f0;
+    color: #fff;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    border: none;
+    padding: 14px 24px;
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+}
+
+._3bKK5G{
+    color: #fff;
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+
+.hwinput{
+    width: 260px;
+    height: 40px;
+  margin-top: 10px;
+  outline: #2874f0;
+}
+
+.hwinput::placeholder{
+    padding-left: 10px;
+    font-family: Roboto,Arial,sans-serif;
+}
+
+.hwinput:focus{
+    border: 1px solid  #2874f0;
+}
+.textarea:focus{
+    border: 1px solid  #2874f0;
+}
+.rightinput{
+    margin-left: 10px;
+}
+.textarea{
+    width: 545px;
+    height: 100px;
+    margin-top: 10px;
+    outline: #2874f0;
+    resize: none;
+
+}
+
+.textarea::placeholder{
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: Roboto,Arial,sans-serif;
+}
+.selecttag{
+    width: 270px;
+    height: 47px;
+  
+  outline: #2874f0;
+}
+
+.adrestype>label{
+    margin-right: 20px;
+    position: relative;
+    bottom: 2px;
+}
+.adrestype p{
+    font-size: 12px;
+color: #878787;
+margin-bottom: 10px;
+}
+
+.adrestype input{
+    width: 15px;
+    height: 15px;
+    
+    margin-right: 10px;
+}
+.saveaddress{
+    background: #fb641b;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 48px;
+    width: 230px;
+    border-radius: 3px;
+    font-weight: 600;
+   
+  margin-top: 20px;
+    
+    cursor: pointer;
+    font-family: Roboto,Arial,sans-serif;
+    letter-spacing: 0;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    margin-bottom: 20px;
+}
+
+
+.cancel{
+    font-weight: 600;
+    color: #2874f0;
+    cursor: pointer;
+    font-family: Roboto,Arial,sans-serif;
+    background-color: transparent;
+    border: none;
+    margin-left: 30px;
+    padding-right: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+
+}
+
+.adressdetailshow{
+    display: none;
+}
+.adressdetailshow.active{
+    display: flex;
+};
+
+
+.textpaymentdetailsh{
+    height: 50px;
+    border: 1px solid red;
+}
+   
+.textpaymentdetailsh{
+    margin-top: 10px;
+   height: 50px;
+}
+
+.textpaymentdetailsh.active{
+    display: none;
+}
+
+/* .payementoptions{
+    visibility: hidden;
+} */
+
+/* .payementoptions.hello{
+    visibility: visible;
+} */
+
+
+.options1{
+    width: 100%;
+    height: 60px;
+    border: 1px solid red;
+}
+
+._32J7lJ{
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    margin-top: -3px;
+}
+
+.option1{
+
+    border-bottom: 1px solid #f0e8e8;
+    padding: 16px 25px;
+    display: flex;
+    cursor: pointer;
+}
+
+.radiobtn{
+    display: inline-block;
+    border: 2px solid #979797;
+    border-radius: 100%;
+    height: 16px;
+    width: 16px;
+    position: relative;
+    vertical-align: top;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.upinames{
+    display: inline-block;
+    margin-left: 18px;
+    width: calc(100% - 34px);
+    margin-top: 2px;
+}
+.XYyD6I{
+    display: flex;
+}
+
+._2nxZhC{
+    float: right;
+    max-width: 216px;
+    font-size: 15px;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #000;
+}
+
+.grLHr5{
+    margin-top: 8px;
+    color: #388e3c;
+    list-style: none;
+    position: relative;
+    right: 38px;
+}
+
+#Credit{
+    margin-right: 10px;
+}
+
+._2cAhoH{
+   
+   width: 700px;
+   position: relative;
+    right: 38px;
+    margin-top: 8px;
+    color: #878787;
+    list-style: none;
+}
+._2nxZhC{
+    width: 100%;
+}
+.payementoptions{
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+}

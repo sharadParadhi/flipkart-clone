@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="paymentpage.css">
+</head>
+<body>
+    <nav>
+     <img src="/fashion kart logo.jpg" alt="logo">
+    </nav>
+    <div id="main">
+        <div class="left">
+             <!-- login details -->
+        <div class="logindetails">
+            <h3 class="numbers">1</h3>
+            <div class="nameandmail">
+                <div class="logintext">
+                LOGIN
+                <svg height="10" width="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="tickicon">
+                    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" stroke="#2974f0"></path>
+                </svg>
+            </div>
+            <div class="emailname">
+                <div>
+                    <span class="displayname">Shiva Krishna</span>
+                    <span class="displayemail">+919440997107</span>
+                </div>
+            </div>
+        </div>
+        <button class="chnagebtn">Change</button>
+        </div>
+
+         <!-- address details -->
+
+        <div class="address">
+            <div class="tiltleadress">
+                <h3 class="number2">2</h3>
+                 <h3 class="delitext">Delivery Address</h3>
+            </div>
+
+           <div class="addadress">
+            <div id="inputsadress">
+            <div class="location">
+                <button class="locationbtn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="_3bKK5G"><g fill="none" fill-rule="evenodd"><path d="M0 0h16v16H0z"></path><path class="" fill="#fff" d="M8 5.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 1 0 0-5.4zm6 2A6 6 0 0 0 8.7 2V.7H7.3V2A6 6 0 0 0 2 7.3H.7v1.4H2A6 6 0 0 0 7.3 14v1.3h1.4V14A6 6 0 0 0 14 8.7h1.3V7.3H14zm-6 5.4A4.7 4.7 0 0 1 3.3 8 4.7 4.7 0 0 1 8 3.3 4.7 4.7 0 0 1 12.7 8 4.7 4.7 0 0 1 8 12.7z"></path></g></svg>Use my current location</button>
+            </div>
+          <form >
+            <div class="name_phone">
+                <input type="text" class="nameadress hwinput" name="name" required="" autocomplete="name" tabindex="1" value="" placeholder="Name">
+
+                <input type="text" class="rightinput hwinput phoneadress" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="" placeholder="10-digit mobile number">
+            </div>
+            
+            <div class="pinandlocal">
+                <input type="text" class=" hwinput pincodeaddress" name="pincode" required="" maxlength="6" autocomplete="postal-code" tabindex="3" value="" placeholder="Pincode">
+
+                <input type="text" class="rightinput hwinput localityadress" required="" name="addressLine2" tabindex="4" value="" placeholder="Locality">
+
+            </div>
+         
+            <div class="adresstext">
+                <textarea class="textarea  adresstrextall" name="addressLine1" rows="4" cols="10" tabindex="5" required="" autocomplete="street-address" spellcheck="false" placeholder="Address (Area and Street)"></textarea>
+                
+            </div>
+           
+
+            <div class="citystate">
+                <input type="text" class="cityadress hwinput" name="city" required="" autocomplete="city" tabindex="6" value="" placeholder="city/District/Town">
+
+                <select class="rightinput selecttag" name="state" required="" tabindex="7">
+                    <option value="">--Select State--</option><option value="Andaman &amp; Nicobar Islands">Andaman &amp; Nicobar Islands</option><option value="Andhra Pradesh">Andhra Pradesh</option><option value="Arunachal Pradesh">Arunachal Pradesh</option><option value="Assam">Assam</option><option value="Bihar">Bihar</option><option value="Chandigarh">Chandigarh</option><option value="Chhattisgarh">Chhattisgarh</option><option value="Dadra &amp; Nagar Haveli &amp; Daman &amp; Diu">Dadra &amp; Nagar Haveli &amp; Daman &amp; Diu</option><option value="Delhi">Delhi</option><option value="Goa">Goa</option><option value="Gujarat">Gujarat</option><option value="Haryana">Haryana</option><option value="Himachal Pradesh">Himachal Pradesh</option><option value="Jammu &amp; Kashmir">Jammu &amp; Kashmir</option><option value="Jharkhand">Jharkhand</option><option value="Karnataka">Karnataka</option><option value="Kerala">Kerala</option><option value="Ladakh">Ladakh</option><option value="Lakshadweep">Lakshadweep</option><option value="Madhya Pradesh">Madhya Pradesh</option><option value="Maharashtra">Maharashtra</option><option value="Manipur">Manipur</option><option value="Meghalaya">Meghalaya</option><option value="Mizoram">Mizoram</option><option value="Nagaland">Nagaland</option><option value="Odisha">Odisha</option><option value="Puducherry">Puducherry</option><option value="Punjab">Punjab</option><option value="Rajasthan">Rajasthan</option><option value="Sikkim">Sikkim</option><option value="Tamil Nadu">Tamil Nadu</option><option value="Telangana">Telangana</option><option value="Tripura">Tripura</option><option value="Uttarakhand">Uttarakhand</option><option value="Uttar Pradesh">Uttar Pradesh</option><option value="West Bengal">West Bengal</option></select>
+            </div>
+           
+            <div class="landmarkandalternate">
+                <input type="text" class="landmarkadress hwinput" name="landmark" autocomplete="off" tabindex="8" maxlength="200" value="" placeholder="Landmark (Optional)">
+
+                <input type="text" class="rightinput hwinput alternatephoneadress" name="alternatePhone" autocomplete="off" tabindex="9" maxlength="10" value="" placeholder="Alternate Phone (Optional)">
+            </div>
+
+            <div class="adrestype">
+                <p>Address Type</p>
+                <input type="radio" class="_3DAmyP" name="locationTypeTag" readonly="" id="HOME"> 
+                <label for="home">Home (All day delivery)</label>
+              
+                <input type="radio" class="_3DAmyP" name="locationTypeTag" readonly="" id="WORK">
+                <label for="work">Work (Delivery between 10 AM - 5 PM)</label>
+
+              
+            </div>
+            <div class="">
+                <button class="saveaddress" type="submit" tabindex="10">Save and Deliver Here</button>
+                <button class="cancel" type="button" tabindex="11">Cancel</button>
+            </div>
+
+          </form>
+
+
+           </div>
+        </div>
+
+        </div>
+<!-- acttve -->
+<div class="logindetails adressdetailshow">
+            <h3 class="numbers">2</h3>
+            <div class="nameandmail">
+                <div class="logintext">
+                DELIVERY ADDRESS
+                <svg height="10" width="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="tickicon">
+                    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" stroke="#2974f0"></path>
+                </svg>
+            </div>
+            <div class="emailname">
+                <div>
+                    <span class="displayname displaynameadress"></span>
+                    <span class="displayemail displaytextareaadress"></span>
+                    <span class="displayemail displaylocalityadress"></span>
+                    <span class="displayemail displaycityadress"></span>
+                    <span class="displayemail displaystateadress"></span>
+                    <span class="displayname displaypincodeadress"></span>
+                </div>
+            </div>
+        </div>
+        <button class="chnagebtn">Change</button>
+        </div>
+
+        
+        
+          <div>
+            <div class="logindetails textpaymentdetailsh">
+                <h3 class="numbers">3</h3>
+                <div class="nameandmail">
+                    <div class="logintext">
+                    PAYMENT OPTIONS
+                    
+                </div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- payemnt options -->
+
+    <div class="payementoptions">
+<div class="tiltleadress">
+                <h3 class="number2">3</h3>
+                 <h3 class="delitext">PAYMENT OPTIONS</h3>
+            </div>
+            <label for="UPI" class="option1 ">
+                <input type="radio" class="radiobtn" name="OTHERS" readonly="" id="UPI">
+                
+                <div class="upinames">
+                    <div class="XYyD6I">
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/batman-returns/logos/UPI.gif" class="_32J7lJ">
+                        <div class="_2nxZhC">
+                           
+                            <span>UPI</span>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+
+            <label for="Wallet" class="option1 ">
+                <input type="radio" class="radiobtn" name="OTHERS" readonly="" id="Wallet">
+                
+                <div class="upinames">
+                    <div class="XYyD6I">
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/batman-returns/logos/UPI.gif" class="_32J7lJ">
+                        <div class="_2nxZhC">
+                           
+                            <span>Wallets</span>
+                            <ul>
+                                <li class="grLHr5">Offers available on Paytm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+            <label for="Credit" class="option1 ">
+                <input type="radio" class="radiobtn" name="OTHERS" readonly="" id="Credit">
+                
+                <div class="upinames">
+                    <div class="XYyD6I">
+                       
+                        <div class="_2nxZhC">
+                           
+                            <span>Credit / Debit / ATM Card</span>
+                            <ul>
+                                <li class="_2cAhoH">Add and secure your card as per RBI guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+
+            <label for="Netbanking" class="option1 ">
+                <input type="radio" class="radiobtn" name="OTHERS" readonly="" id="Netbanking">
+                
+                <div class="upinames">
+                    <div class="XYyD6I">
+                       
+                        <div class="_2nxZhC">
+                           
+                            <span>Net Banking</span>
+                            <ul>
+                                <li class="_2cAhoH">This instrument has low success, use UPI or cards for better experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+
+            <label for="COD" class="option1">
+                <input type="radio" class="radiobtn" name="OTHERS" readonly="" id="COD">
+               
+                <div class="upinames">
+                    <div class="XYyD6I">
+                        <div class="cod">
+                            <span>Cash On Delivery</span>
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </label>
+           
+
+            <label for="EMI" class="option1">
+                <input disabled type="radio" class="radiobtn" name="OTHERS" readonly="" id="EMI">
+               
+                <div class="upinames">
+                    <div class="XYyD6I">
+                        <div class="cod">
+                            <span>EMI</span>
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </label>
+           
+    </div>
+
+
+
+        </div>
+        <div class="right">
+        
+        </div>
+    </div>
+    </div>
+
+
+</body>
+<script src="/paymentpage.js"></script>
+</html>
+
