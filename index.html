@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home_page</title>
     <style>
+      *{
+        font-family: Roboto, Arial, sans-serif;
+      }
         nav{
         width: 100%;
         height: 80px;
@@ -68,7 +71,7 @@
  }
  #slideshow{
   width: 100%;
-  height: 250px;
+  height: 320px;
   background-color: white;
  }
  #bottom_part{
@@ -192,18 +195,23 @@
 
 </head>
 <body>
+  <!-- -----------nav bar-------------------- -->
     <nav>
         <img id="logo" src="./images/IMG-20230221-WA0001.jpg" alt="">
         <form class="fonts">
             <input type="text" placeholder="Search" id="search" />
             <input type="submit" value="Search" />
           </form>
-          <li><a href=""><i class="fa fa-home"></i>Home</a></li>
-          <a href="#"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
-          <a href="#"><i class="fa-solid fa-user-plus"></i>Sign up</a>
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
-          <a href="#"><i class="fa-solid fa-phone"></i>Admin</a>  
+          <li><a href="./index.html"><i class="fa fa-home"></i>Home</a></li>
+          <a href="./login.html"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+          <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+          <a href="./adminlogin.html"><i class="fa-solid fa-user-plus"></i>Admin</a>  
     </nav>
+
+<!-- ---------------------nav end ------------------- -->
+
+
+<!-- ---------------------- nav ------------------>
      <div id="nav_low">
         <div class="house">
           <img src="./images/s1.png" alt="ERROR">
@@ -218,9 +226,7 @@
             <img src="./images/s2.png" alt="ERROR">
           <p>Fashion</p>
           <div class="drop-down">
-            <li> Mens
-             
-            </li>
+            <li >Mens</li>
             <li> Womens</li>
             <li>Sports</li>
             <li>kitchen</li>
@@ -337,7 +343,7 @@
        
         </div>
         <div class="electronic electronic1">
-          <div><a href="./products.html"  id="menWear">
+          <div><a href="./products.html"  id="menWear" class="menWear">
           <img src="./images/p2.png" alt="">
           <button id="men">Explore ></button></a>
         </div>
@@ -614,6 +620,17 @@ async function getProductsData(){
           // console.log(menWearData)
         localStorage.setItem("products",JSON.stringify(menWearData))
 })
+
+
+document.getElementsByClassName("menWear").addEventListener("click",()=>{
+           let menWearData=data.filter((el)=>{
+               return el.category==='menwear'
+           })
+          // console.log(menWearData)
+        localStorage.setItem("products",JSON.stringify(menWearData))
+})
+
+
 
  document.getElementById("shoes").addEventListener("click",()=>{
         let shoesData=data.filter((el)=>{
