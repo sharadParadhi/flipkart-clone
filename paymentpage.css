@@ -10,18 +10,34 @@ body{
     letter-spacing: 0;
 }
 
+
 nav{
     width: 100%;
-    height: 56px;
-    background-color: #2874f0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: cornflowerblue;
     position: sticky;
+    top: 0;
+   
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    
+}
+li{
+    list-style: none;
 }
 nav img{
-    width: 150px;
-    height: 56px;
-    position: relative;
-    left: 250px;
+   
+    width: 20%;
+    height: 80%;
+    display: block;
+    align-items: center;
 }
+
 
 
 .left{

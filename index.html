@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home_page</title>
     <style>
+      *{
+        font-family: Roboto, Arial, sans-serif;
+      }
         nav{
         width: 100%;
         height: 80px;
@@ -223,9 +226,7 @@
             <img src="./images/s2.png" alt="ERROR">
           <p>Fashion</p>
           <div class="drop-down">
-            <li> Mens
-             
-            </li>
+            <li >Mens</li>
             <li> Womens</li>
             <li>Sports</li>
             <li>kitchen</li>
@@ -342,7 +343,7 @@
        
         </div>
         <div class="electronic electronic1">
-          <div><a href="./products.html"  id="menWear">
+          <div><a href="./products.html"  id="menWear" class="menWear">
           <img src="./images/p2.png" alt="">
           <button id="men">Explore ></button></a>
         </div>
@@ -619,6 +620,17 @@ async function getProductsData(){
           // console.log(menWearData)
         localStorage.setItem("products",JSON.stringify(menWearData))
 })
+
+
+document.getElementsByClassName("menWear").addEventListener("click",()=>{
+           let menWearData=data.filter((el)=>{
+               return el.category==='menwear'
+           })
+          // console.log(menWearData)
+        localStorage.setItem("products",JSON.stringify(menWearData))
+})
+
+
 
  document.getElementById("shoes").addEventListener("click",()=>{
         let shoesData=data.filter((el)=>{

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="paymentpage.css">
 </head>
 <body>
-    <nav>
-     <img src="/fashion kart logo.jpg" alt="logo">
-    </nav>
+   
+        <nav>
+            <img id="logo" src="./images/IMG-20230221-WA0001.jpg" alt="">
+            <form class="fonts">
+                <input type="text" placeholder="Search" id="search" />
+                <input type="submit" value="Search" />
+              </form>
+              <li><a href="./index.html"><i class="fa fa-home"></i>Home</a></li>
+              <a href="./login.html"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+              <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+              <a href="./adminlogin.html"><i class="fa-solid fa-user-plus"></i>Admin</a>  
+        </nav>
+
+
+   
     <div id="main">
         <div class="left">
              <!-- login details -->
@@ -25,8 +39,8 @@
             </div>
             <div class="emailname">
                 <div>
-                    <span class="displayname">Shiva Krishna</span>
-                    <span class="displayemail">+919440997107</span>
+                    <span class="displayname"></span>
+                    <span class="displayemail"></span>
                 </div>
             </div>
         </div>
@@ -180,15 +194,15 @@
                 </div>
             </label>
 
-            <label for="Credit" class="option1 ">
+            <label for="Credit"  class="option1 cred">
                 <input type="radio" class="radiobtn" name="OTHERS" readonly="" id="Credit">
                 
-                <div class="upinames">
+                <div class="upinames" id="clickcard">
                     <div class="XYyD6I">
                        
                         <div class="_2nxZhC">
                            
-                            <span>Credit / Debit / ATM Card</span>
+                            <span >Credit / Debit / ATM Card</span>
                             <ul>
                                 <li class="_2cAhoH">Add and secure your card as per RBI guidelines</li>
                             </ul>
@@ -196,6 +210,58 @@
                     </div>
                 </div>
             </label>
+
+
+            <!-- active cards -->
+
+            <label for="Credit" class="option1 popupcrdeit">
+                <input type="radio" class="radiobtn" name="OTHERS" readonly="" id="Credit" checked>
+                
+                <div class="upinames">
+                    <div class="XYyD6I">
+                       
+                        <div class="_2nxZhC">
+                           
+                            <span>Credit / Debit / ATM Card</span>
+ 
+                            <div class="inputcards">
+
+                                <input type="text" class="cardnumber" autocomplete="cc-number" name="cardNumber" maxlength="16" required tabindex="1" value="" placeholder="Enter Your Card Number">
+
+                                <div class="expirycvv">
+                                    <div class="monthyear">
+                                    <span>Valid thru</span>
+                                    
+
+                                    <select class="_2t2oBT _1wEi1H _9IYuSq" name="month" required="" tabindex="4"><option >MM</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>
+
+
+                                    <select class="_2t2oBT _1wEi1H" name="year" required="" tabindex="5"><option >YY</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option></select>
+
+                                </div>
+
+                                <div>
+                                    <input type="password" class="cvvfield O6YMOO _2mFmU7" autocomplete="cc-csc" maxlength="4" name="cvv" required="" tabindex="6" value="" placeholder="CVV">
+                                </div>
+
+
+                                </div>
+
+                                <button class="submitbtn " tabindex="7" type="button">PAY ₹ <span class="totpr3"></span></button>
+
+
+                            </div>
+
+
+                            <ul>
+                                <li class="_2cAhoH">Add and secure your card as per RBI guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+
 
 
             <label for="Netbanking" class="option1 ">
@@ -253,7 +319,18 @@
 
         </div>
         <div class="right">
-        
+        <div class="pricetxt">
+            PRICE DETAILS
+        </div>
+        <div class="priceanddis">
+          <span class="sleft">Price</span> <span class="sright totpr">₹</span> <br>
+          <span class="sleft delh">Delivery Charges</span> <span class="free delh">FREE</span>
+        </div>
+        <div class="total">
+         <span>Total Payable</span> <span class="money totpr2">₹</span>
+        </div>
+
+        <div class="_3FtxmT"><span class="_1YVZr_">Your Total Savings on this order <div>₹<span class="showamount"></span></div></span></div>
         </div>
     </div>
     </div>
