@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<style>
+    li{
+      list-style: none;
+    }
+    nav{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: cornflowerblue;
+        position: sticky;
+        top: 0;
+       
+    }
+    nav a{
+        color: white;
+        text-decoration: none;
+        
+    }
+    nav img{
+       
+        width: 20%;
+        height: 80%;
+        display: block;
+        align-items: center;
+    }
+#bottom_part{
+  width: 100%;;
+  height: 300px;
+  background-color: rgb(35, 55, 94);
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-size: 13px;
+}
+.grey{
+  color: grey;
+  font-size: 12px;
+}
+.cart{
+    width: 57%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    height: 60px;
+    margin-top: 15px;
+    margin-left: 40px;
+    padding-bottom:15px;
+}
+.cart h2{
+    text-align: center;
+    color: #4e89c6;
+    font-size: x-large;
+    
+   
+
+}
+.motherContainer{
+    display: flex;
+}
+#cartContainer{
+width: 60%;
+
+}
+#totalAmount{
+width: 30%;
+margin-left: 50px;
+
+
+
+}
+#cartContainer img{
+width: 100px;
+
+}
+#cartContainer div{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding-left: 30px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#cartContainer div button{
+  margin-bottom: 10px;
+}
+#totalAmount h3{
+  font-size: x-large;
+  color:#4e89c6;
+  padding-bottom: 50px;
+}
+#Place{
+  margin-left: 600px;
+  color: white;
+  width: 150px;
+  margin-bottom: 15px;
+  
+
+  
+
+}
+#Place button{
+  padding: 8px;
+  background-color: yellow;
+  border: none;
+  width: 170px;
+}
+
+    
+
+
+
+</style>
+<body>
+
+
+  <nav>
+    <img id="logo" src="./images/IMG-20230221-WA0001.jpg" alt="">
+    <form class="fonts">
+        <input type="text" placeholder="Search" id="search" />
+        <input type="submit" value="Search" />
+      </form>
+      <li><a href="./index.html"><i class="fa fa-home"></i>Home</a></li>
+      <a href="./login.html"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+      <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+      <a href="./adminlogin.html"><i class="fa-solid fa-user-plus"></i>Admin</a>  
+</nav>
+<div class="motherContainer">
+<div class="cart">
+    <h2>Cart</h2>
+
+</div>
+
+<div id="totalAmount">
+  <h3> Total CartAmount:- <span id="totalcost">0</span></h3> 
+</div>
+</div>
+
+
+    <div id="cartContainer"></div>
+
+    <div id="Place"><a href="./paymentpage.html"> <button id="PlaceOrder">Place Order</button></a>
+      </div>
+    
+    
+
+
+
+<div id="bottom_part">
+    <div>
+   <h3 class="grey">ABOUT</h3> <p>Contact Us</p><p>About Us</p><p> Careers</p><p> Fashionkart Stories</p><p>Press</p> <p>Fashionkart Wholesale</p><p>Corporate Information</p>
+    </div>
+    <div>
+  <h3 class="grey">HELP</h3><p>Payments</p><p>Shippin</p><p>Cancellation & Returns</p><p>FAQ</p><p>Report Infringement</p>
+      </div>
+      <div>
+     <h3 class="grey">POLICY</h3>
+  <p>Return Policy</p><p>Terms of use</p><p>Security</p><p>Privacy</p><p>Sitemap</p> <p>EPR Compliance</p>
+      </div>
+      <div>
+     <h3 class="grey">SOCIAL</h3>
+      <p>Facebook</p><p>Twitter</p><p>Youtube</p>
+      </div>
+      <div>
+  <h3 class="grey">MAIL US</h3>
+  <p>Fashionkart Internet Private Limited,<br> Buildings Alyssa, Begonia & <br>Clove Embassy Tech Village,<br>Outer Ring Road,<br> Devarabeesanahalli Village,<br>Bengaluru, 560103,<br>Karnataka, India</p>
+  </div>
+     <div>
+  <h3 class="grey">Registered Office Address:</h3>
+  <p>Fashionkart Internet Private Limited,<br>Buildings Alyssa, Begonia & <br>Clove Embassy Tech Village, <br>Outer Ring Road, Devarabeesanahalli Village, <br> Bengaluru, 560103, <br> Karnataka, India <br> CIN : U51109KA2012PTC066107 <br>Telephone: 044-45614700</p>
+  </div>
+  </div>
+</body>
+<script>
+  let cartContainer =document.getElementById("cartContainer")
+  let total =document.getElementById("totalcost")
+  
+  
+ 
+  
+
+      let products = JSON.parse(localStorage.getItem("addToCart"))
+      
+
+
+console.log(products)
+
+
+
+displayproducts(products)
+
+
+
+function displayproducts(products) {
+  cartContainer.innerText = "";
+
+  let sum =0
+  products.forEach((ele)=>{
+    sum+= Number(ele.price)
+    total.innerText =sum;
+  })
+
+  
+
+  products.forEach((el) => {
+    let card = document.createElement("div");
+    
+   
+
+    let image = document.createElement("img");
+    image.setAttribute("src",el.image)
+    
+    
+    //card.appendChild(image);
+
+    let name = document.createElement("h3");
+    name.innerText = el.title;
+   
+    
+
+    let description = document.createElement("p");
+    description.innerText = el.description;
+    
+    //card.appendChild(description);
+
+    let cost=document.createElement("p")
+    cost.innerText=el.price
+
+    
+
+   
+
+    
+    
+    
+    
+  
+    let buttons=document.createElement("button")
+   buttons.innerText="Remove"; 
+   buttons.addEventListener("click",()=>{
+    data=products.filter((e)=>{
+      return e.id !== el.id
+    })
+    localStorage.setItem("addToCart",JSON.stringify(data))
+    displayproducts(data)
+   })
+   
+
+    card.append(image,name,description,cost,buttons);
+        cartContainer.append(card);
+        
+
+        
+    
+         
+        
+    
+    
+    })
+            
+    
+
+       
+        }
+        
+</script>
+</html>

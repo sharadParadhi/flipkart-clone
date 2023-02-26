@@ -1,0 +1,11 @@
+### 
+GET https://636f63f1bb9cf402c81694bd.mockapi.io/starproduct
+
+###
+POST https://636f63f1bb9cf402c81694bd.mockapi.io/starproduct
+
+### 
+DELETE https://636f63f1bb9cf402c81694bd.mockapi.io/starproduct/
+
+### 
+PATCH https://636f63f1bb9cf402c81694bd.mockapi.io/starproduct
