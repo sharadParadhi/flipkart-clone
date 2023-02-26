@@ -1,7 +1,7 @@
 
 
 let totalprice= JSON.parse(localStorage.getItem("totalprice"));
-console.log(totalprice)
+
 let nemail = JSON.parse(localStorage.getItem("nameemailshow"));
 
 
@@ -59,20 +59,6 @@ form.addEventListener("submit", (e)=>{
    document.querySelector(".payementoptions").classList.add("hello")
 
    
-});
-
-let card = document.getElementById("clickcard");
-
-card.addEventListener("submit",(e)=>{
-    e.preventDefault()
-    document.querySelector(".cred").classList.add("active")
-   document.querySelector(".popupcrdeit").classList.add("active")
-})
-
-document.querySelector(".submitbtn").addEventListener("click",()=>{
-   
-    window.location.href="./ordersuceesful.html"
-});
 
 document.querySelector(".showamount").textContent = Math.ceil(Math.random()*10000) ;
 
