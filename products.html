@@ -11,7 +11,8 @@
 }
 
 main{
-    margin-top: 108px;
+    margin-top: 48px;
+    margin-bottom: 48px;
 }
 body{
     background-color: #d8d8d8;
@@ -63,7 +64,7 @@ img{
     width: 95%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 25px;
     line-height: 34px;
     
@@ -80,7 +81,7 @@ img{
 }
 
 .productsBtn,.increamentBtn,.decreamentBtn,.removeBtn,#TotalPrice button{
-    background-color:rgb(58, 56, 56);
+    background-color: rgb(58, 56, 56);
     border: none;
     color: white;
     padding: 7px 16px;
@@ -102,7 +103,7 @@ img{
     margin-bottom: 10px;
    }
   select,#lower,#upper,#filterByPrice-btn{
-    background-color: rgb(58, 56, 56);
+    background-color:skyblue;
     color: white;
     padding: 8px;
     font-size: 14px;
@@ -133,12 +134,78 @@ img{
   #star img{
     width: 15px;
   }
+  nav{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: cornflowerblue;
+        position: sticky;
+        top: 0;
+       
+    }
+    nav a{
+        color: white;
+        text-decoration: none;
+        
+    }
+    nav img{
+       
+        width: 20%;
+        height: 80%;
+        display: block;
+        align-items: center;
+    }
+    #bottom_part{
+    width: 100%;;
+    height: 300px;
+    background-color: rgb(35, 55, 94);
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 13px;
+ }
+ .grey{
+    color: grey;
+    font-size: 12px;
+ }
+ @media all and (min-width: 750px) and (max-width:1025px){
+  #container{
+  display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 17px;
+        margin-top: 34px;
+        margin-bottom: 32px;
+    }
+ }
+ @media all and (min-width:320px) and (max-width:750px){
+  #container{
+  display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 17px;
+        margin-top: 34px;
+        margin-bottom: 32px;
+    }
+ }
     </style>
     
     
 </head>
 <body>
-    <header></header>
+    
+  <nav>
+    <img id="logo" src="./images/IMG-20230221-WA0001.jpg" alt="">
+    <form class="fonts">
+        <input type="text" placeholder="Search" id="search" />
+        <input type="submit" value="Search" />
+      </form>
+      <li><a href=""><i class="fa fa-home"></i>Home</a></li>
+      <a href="#"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+      <a href="#"><i class="fa-solid fa-user-plus"></i>Sign up</a>
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+      <a href="#"><i class="fa-solid fa-phone"></i>Admin</a>  
+</nav>
 
     <main>
       <div id="functionality">
@@ -171,7 +238,30 @@ img{
 
         <div id="container"> </div>
     </main>
-    <footer></footer>
+    <div id="bottom_part">
+      <div>
+     <h3 class="grey">ABOUT</h3> <p>Contact Us</p><p>About Us</p><p> Careers</p><p> Fashionkart Stories</p><p>Press</p> <p>Fashionkart Wholesale</p><p>Corporate Information</p>
+      </div>
+      <div>
+<h3 class="grey">HELP</h3><p>Payments</p><p>Shippin</p><p>Cancellation & Returns</p><p>FAQ</p><p>Report Infringement</p>
+        </div>
+        <div>
+       <h3 class="grey">POLICY</h3>
+    <p>Return Policy</p><p>Terms of use</p><p>Security</p><p>Privacy</p><p>Sitemap</p> <p>EPR Compliance</p>
+        </div>
+        <div>
+       <h3 class="grey">SOCIAL</h3>
+        <p>Facebook</p><p>Twitter</p><p>Youtube</p>
+        </div>
+        <div>
+    <h3 class="grey">MAIL US</h3>
+<p>Fashionkart Internet Private Limited,<br> Buildings Alyssa, Begonia & <br>Clove Embassy Tech Village,<br>Outer Ring Road,<br> Devarabeesanahalli Village,<br>Bengaluru, 560103,<br>Karnataka, India</p>
+    </div>
+       <div>
+<h3 class="grey">Registered Office Address:</h3>
+<p>Fashionkart Internet Private Limited,<br>Buildings Alyssa, Begonia & <br>Clove Embassy Tech Village, <br>Outer Ring Road, Devarabeesanahalli Village, <br> Bengaluru, 560103, <br> Karnataka, India <br> CIN : U51109KA2012PTC066107 <br>Telephone: 044-45614700</p>
+</div>
+  </div>
 </body>
    <script>
      
@@ -291,21 +381,24 @@ container.append(card)
        }
      })
 
+     let searchform = document.querySelector("form")
+    searchform.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let empoloyeeName = searchform.search.value;
+        let Filtered = alldata.filter((ele)=>{
+            if(ele.name.toUpperCase().includes(empoloyeeName.toUpperCase()) === true){
+                return true
+            }else{
+                return false;
+            }
+        })
+        displayProducts(Filtered);
+    })
+
 
 
    </script>
 </html>
-<script>
-  $(function () {
-      $('header').load('header.html');
-  }) 
-</script>
-
-<script>
-  $(function () {
-      $('footer').load('footer.html');
-  }) 
-</script>
 
 
 
