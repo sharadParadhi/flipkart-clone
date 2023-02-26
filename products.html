@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+li{
+  list-style: none;
+}
+
 main{
     margin-top: 48px;
     margin-bottom: 48px;
@@ -189,7 +193,8 @@ img{
     }
  }
     </style>
-    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
     
 </head>
 <body>
@@ -200,11 +205,10 @@ img{
         <input type="text" placeholder="Search" id="search" />
         <input type="submit" value="Search" />
       </form>
-      <li><a href=""><i class="fa fa-home"></i>Home</a></li>
+      <li><a href="./index.html"><i class="fa fa-home"></i>Home</a></li>
       <a href="#"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
-      <a href="#"><i class="fa-solid fa-user-plus"></i>Sign up</a>
-      <a href="#"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
-      <a href="#"><i class="fa-solid fa-phone"></i>Admin</a>  
+      <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+      <a href="./adminlogin.html"><i class="fa-solid fa-user-plus"></i>Admin</a>  
 </nav>
 
     <main>
@@ -315,6 +319,17 @@ displayProducts(products)
    buttons.innerText="Add to Cart"
     buttons.addEventListener("click",function(){
       carti.push(product)
+
+      let already=false;
+      
+      let data=carti.filter((element,ind)=>{
+        if(element==ele){
+          return false
+        }else{
+          return true
+        }
+      })
+     console(data)
       localStorage.setItem("addToCart",JSON.stringify(carti))
     })
       

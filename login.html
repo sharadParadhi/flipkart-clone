@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <style>
 
 /* *************************************************** Shiva's CSS   ******************************************************/
 
 
-    body{
-       background: url("https://img.freepik.com/free-vector/seamless-white-interlaced-rounded-arc-patterned-background_53876-97975.jpg?w=2000&t=st=1677220504~exp=1677221104~hmac=dee9aacc7827b797a2e2937d22adef9d2627d288893568161927ddb7df30b94d");
+/* ----------------nva bar-------------------- */
+li{
+    list-style: none;
+}
+nav{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: cornflowerblue;
+        position: sticky;
+        top: 0;
+       
     }
-    body.active{
-        z-index: 2;
-        background-color: rgba(0,0,0,0.5);
+    nav a{
+        color: white;
+        text-decoration: none;
+        
     }
+    nav img{
+       
+        width: 20%;
+        height: 80%;
+        display: block;
+        align-items: center;
+    }
+
+
+
+
+/* ------------------body------------------ */
+
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #dbd5d5;
+}
+   
     .pop-up {
        
       
@@ -121,7 +156,7 @@ color: rgb(255, 255, 255);
     height: 500px;
   
 }
-form{
+#loginpage{
     margin: auto;
     margin-top: 50px;
    width: 360px;
@@ -158,7 +193,7 @@ form{
   color: #2874F0;
   
 }
-form{
+#loginpage{
     font-family: Roboto, Arial, sans-serif;
     font-size: 12px;
     font-weight: 400;
@@ -494,12 +529,45 @@ color: rgb(255, 255, 255);
     bottom: 15px;
 }
 
+/* -----------footor------------ */
+#bottom_part{
+    width: 100%;;
+    height: 300px;
+    background-color: rgb(35, 55, 94);
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 13px;
+    margin-top: 600px;
+ }
+ .grey{
+    color: grey;
+    font-size: 12px;
+ }
+
 
 /* *************************************************** Shiva's CSS  End  ******************************************************/
+
+
+
   </style>
 <body>
+    <!-- -------------nav bar------------------ -->
+    
+    <nav>
+        <img id="logo" src="./images/IMG-20230221-WA0001.jpg" alt="">
+        <form class="fonts">
+            <input type="text" placeholder="Search" id="search" />
+            <input type="submit" value="Search" />
+          </form>
+          <li><a href="./index.html"><i class="fa fa-home"></i>Home</a></li>
+          <a href="./login.html"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+          <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+          <a href="./adminlogin.html"><i class="fa-solid fa-user-plus"></i>Admin</a>  
+    </nav>
 
-    <button class="sign">Click Here</button>
+
+
 
      <!-- ******v*********v***********v************v********v***** Shiva's html   *****v************v*******v*****v**********v*********v*****-->
 
@@ -624,6 +692,75 @@ color: rgb(255, 255, 255);
 
  <!-- ***V**********v***********v*************v**********v**** Shiva's html End  ******v*************v*******v*********v********v*******v***-->
 
+ <!-- ------------------footor-------------- -->
+
+ <div id="bottom_part">
+    <div>
+   <h3 class="grey">ABOUT</h3> <p>Contact Us</p><p>About Us</p><p> Careers</p><p> Fashionkart Stories</p><p>Press</p> <p>Fashionkart Wholesale</p><p>Corporate Information</p>
+    </div>
+    <div>
+<h3 class="grey">HELP</h3><p>Payments</p><p>Shippin</p><p>Cancellation & Returns</p><p>FAQ</p><p>Report Infringement</p>
+      </div>
+      <div>
+     <h3 class="grey">POLICY</h3>
+  <p>Return Policy</p><p>Terms of use</p><p>Security</p><p>Privacy</p><p>Sitemap</p> <p>EPR Compliance</p>
+      </div>
+      <div>
+     <h3 class="grey">SOCIAL</h3>
+      <p>Facebook</p><p>Twitter</p><p>Youtube</p>
+      </div>
+      <div>
+  <h3 class="grey">MAIL US</h3>
+<p>Fashionkart Internet Private Limited,<br> Buildings Alyssa, Begonia & <br>Clove Embassy Tech Village,<br>Outer Ring Road,<br> Devarabeesanahalli Village,<br>Bengaluru, 560103,<br>Karnataka, India</p>
+  </div>
+     <div>
+<h3 class="grey">Registered Office Address:</h3>
+<p>Fashionkart Internet Private Limited,<br>Buildings Alyssa, Begonia & <br>Clove Embassy Tech Village, <br>Outer Ring Road, Devarabeesanahalli Village, <br> Bengaluru, 560103, <br> Karnataka, India <br> CIN : U51109KA2012PTC066107 <br>Telephone: 044-45614700</p>
+</div>
+</div>
+
+
+
+
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 <script>
 
@@ -634,9 +771,9 @@ color: rgb(255, 255, 255);
 let LSSigndata=JSON.parse(localStorage.getItem("signinlogin"))||[];
 
   window.addEventListener("load", ()=>{
-    setTimeout(() => {
+    
         document.querySelector(".pop-up").classList.add("active");
-    }, 1000);
+    
   })
   // ********************************** login page **********************************-->
 
@@ -789,10 +926,14 @@ SignUpform.addEventListener("submit",(e)=>{
         document.querySelector(".existingbtnhide").classList.remove("active");
       }, 9000);
 
+
+      setTimeout(() => {
         namesignup.value = null;
         emailinputsignup.value = null;
         passinputsigup1.value = null;
         passinputsignup2.value = null;
+      }, 20000);
+        
  
     };
 
@@ -804,6 +945,8 @@ SignUpform.addEventListener("submit",(e)=>{
 
 
 // ********************************** Local Storage Login Page **********************************-->
+
+let arr2=[];
  let loginpage = document.getElementById("loginpage");
  let emaillogininp = document.getElementById("emailinput");
  let passlogininp = document.getElementById("passinput");
@@ -816,7 +959,13 @@ loginpage.addEventListener("submit", (e)=>{
         if(emaillogininp.value == element.email && passlogininp.value == element.password){
             count++;
            otpdetails(element.fullname,Math.floor(Math.random()*1000000)) 
-
+   let obj2={
+    name : element.fullname,
+    email : element.email
+   };
+   arr2.push(obj2)
+   localStorage.setItem("nameemailshow", JSON.stringify(arr2));
+   
             document.querySelector(".pop-up").classList.remove("active");
             document.querySelector(".pop-up-otp").classList.add("active");
 
@@ -866,6 +1015,7 @@ formotp.addEventListener("submit", (e) =>{
     document.querySelector("#Veryfiing").classList.add("active");
    setTimeout(() => {
     document.querySelector("#Veryfiing").classList.remove("active");
+    window.location.href="index.html"
    }, 3000);
    }else{
     otpincorrect.textContent ="OTP is Incorrect";
